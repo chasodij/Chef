@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92013F48-0B17-496B-812E-097A53D4E725}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>chef</RootNamespace>
+    <AssemblyName>chef</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\connection_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\connection_form.Designer.cs">
+      <DependentUpon>connection_form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\do_query_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\do_query_Form.Designer.cs">
+      <DependentUpon>do_query_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dishes\dishes_Details_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dishes\dishes_Details_Form.Designer.cs">
+      <DependentUpon>dishes_Details_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dishes\dishes_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dishes\dishes_Form.Designer.cs">
+      <DependentUpon>dishes_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dishes\dishes_AddEdit_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dishes\dishes_AddEdit_Form.Designer.cs">
+      <DependentUpon>dishes_AddEdit_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dishes\dish_card_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dishes\dish_card_Form.Designer.cs">
+      <DependentUpon>dish_card_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dishes\dishes_Filter_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dishes\dishes_Filter_Form.Designer.cs">
+      <DependentUpon>dishes_Filter_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\dishes\dishes_Sort_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\dishes\dishes_Sort_Form.Designer.cs">
+      <DependentUpon>dishes_Sort_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\main_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\main_Form.Designer.cs">
+      <DependentUpon>main_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\orders\orders_Filter_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\orders\orders_Filter_Form.Designer.cs">
+      <DependentUpon>orders_Filter_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\orders\orders_Sort_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\orders\orders_Sort_Form.Designer.cs">
+      <DependentUpon>orders_Sort_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\orders\invoice_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\orders\invoice_Form.Designer.cs">
+      <DependentUpon>invoice_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\orders\orders_AddEdit_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\orders\orders_AddEdit_Form.Designer.cs">
+      <DependentUpon>orders_AddEdit_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\orders\orders_Details_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\orders\orders_Details_Form.Designer.cs">
+      <DependentUpon>orders_Details_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\orders\orders_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\orders\orders_Form.Designer.cs">
+      <DependentUpon>orders_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\products\products_Filter_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\products\products_Filter_Form.Designer.cs">
+      <DependentUpon>products_Filter_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\products\products_Sort_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\products\products_Sort_Form.Designer.cs">
+      <DependentUpon>products_Sort_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\queries_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\queries_Form.Designer.cs">
+      <DependentUpon>queries_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\specials\specials_Filter_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\specials\specials_Filter_Form.Designer.cs">
+      <DependentUpon>specials_Filter_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\specials\specials_Sort_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\specials\specials_Sort_Form.Designer.cs">
+      <DependentUpon>specials_Sort_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\specials\specials_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\specials\specials_Form.Designer.cs">
+      <DependentUpon>specials_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\specials\specials_Finding_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\specials\specials_Finding_Form.Designer.cs">
+      <DependentUpon>specials_Finding_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\login_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\login_Form.Designer.cs">
+      <DependentUpon>login_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\products\products_AddEdit_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\products\products_AddEdit_Form.Designer.cs">
+      <DependentUpon>products_AddEdit_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\types_of_products\types_of_products_AddEdit_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\types_of_products\types_of_products_AddEdit_Form.Designer.cs">
+      <DependentUpon>types_of_products_AddEdit_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\products\products_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\products\products_Form.Designer.cs">
+      <DependentUpon>products_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\types_of_products\types_of_products_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\types_of_products\types_of_products_Form.Designer.cs">
+      <DependentUpon>types_of_products_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\types_of_products\types_of_products_Filter_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\types_of_products\types_of_products_Filter_Form.Designer.cs">
+      <DependentUpon>types_of_products_Filter_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\types_of_products\types_of_products_Sort_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\types_of_products\types_of_products_Sort_Form.Designer.cs">
+      <DependentUpon>types_of_products_Sort_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sortRow.cs" />
+    <Compile Include="Forms\user_management_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\user_management_Form.Designer.cs">
+      <DependentUpon>user_management_Form.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\connection_form.resx">
+      <DependentUpon>connection_form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\do_query_Form.resx">
+      <DependentUpon>do_query_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dishes\dishes_Details_Form.resx">
+      <DependentUpon>dishes_Details_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dishes\dishes_Form.resx">
+      <DependentUpon>dishes_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dishes\dishes_AddEdit_Form.resx">
+      <DependentUpon>dishes_AddEdit_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dishes\dish_card_Form.resx">
+      <DependentUpon>dish_card_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dishes\dishes_Filter_Form.resx">
+      <DependentUpon>dishes_Filter_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\dishes\dishes_Sort_Form.resx">
+      <DependentUpon>dishes_Sort_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\main_Form.resx">
+      <DependentUpon>main_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\orders\orders_Filter_Form.resx">
+      <DependentUpon>orders_Filter_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\orders\orders_Sort_Form.resx">
+      <DependentUpon>orders_Sort_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\orders\invoice_Form.resx">
+      <DependentUpon>invoice_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\orders\orders_AddEdit_Form.resx">
+      <DependentUpon>orders_AddEdit_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\orders\orders_Details_Form.resx">
+      <DependentUpon>orders_Details_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\orders\orders_Form.resx">
+      <DependentUpon>orders_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\products\products_Filter_Form.resx">
+      <DependentUpon>products_Filter_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\products\products_Sort_Form.resx">
+      <DependentUpon>products_Sort_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\queries_Form.resx">
+      <DependentUpon>queries_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\specials\specials_Filter_Form.resx">
+      <DependentUpon>specials_Filter_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\specials\specials_Sort_Form.resx">
+      <DependentUpon>specials_Sort_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\specials\specials_Form.resx">
+      <DependentUpon>specials_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\specials\specials_Finding_Form.resx">
+      <DependentUpon>specials_Finding_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\types_of_products\types_of_products_Sort_Form.resx">
+      <DependentUpon>types_of_products_Sort_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\login_Form.resx">
+      <DependentUpon>login_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\products\products_AddEdit_Form.resx">
+      <DependentUpon>products_AddEdit_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\types_of_products\types_of_products_AddEdit_Form.resx">
+      <DependentUpon>types_of_products_AddEdit_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\products\products_Form.resx">
+      <DependentUpon>products_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\types_of_products\types_of_products_Form.resx">
+      <DependentUpon>types_of_products_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\types_of_products\types_of_products_Filter_Form.resx">
+      <DependentUpon>types_of_products_Filter_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\user_management_Form.resx">
+      <DependentUpon>user_management_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asc1_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asc2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desc1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desc2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asc2_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desc1_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desc2_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\del1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\types.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\see_dishes1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\specials.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\query.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create_order.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\products1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\types1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
