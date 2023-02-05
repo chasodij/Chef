@@ -1,4 +1,6 @@
-﻿namespace chef.BLL.Entities
+﻿using System.Collections.Generic;
+
+namespace chef.BLL.Entities
 {
     public class Dish
     {
@@ -11,5 +13,6 @@
         public string MenuSection { get; set; }
         public decimal Price { get; set; }
         public string EnergyCategory { get; set; }
+        public List<Ingredient> Ingredients { get; set; }
     }
 }
