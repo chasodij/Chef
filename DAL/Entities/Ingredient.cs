@@ -7,5 +7,6 @@
         public int DishId { get; set; }
         public string DishName { get; set; }
         public double AmountInUnits { get; set; }
+        public string UnitsOfMeasurement { get; set; }
     }
 }
