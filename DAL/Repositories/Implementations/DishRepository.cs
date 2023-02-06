@@ -3,8 +3,8 @@ using chef.BLL.UnitOfWork;
 using chef.DAL.Extensions;
 using chef.DAL.Repositories.Interfaces;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+using System.Data;
+using System.Text;
 
 namespace chef.DAL.Repositories.Implementations
 {
@@ -122,9 +122,114 @@ namespace chef.DAL.Repositories.Implementations
             }
         }
 
-        public IEnumerable<Dish> GetAll()
+        public IEnumerable<Dish> GetAll(List<string> filterStatements = null, List<string> sortStatements = null)
         {
-            throw new System.NotImplementedException();
+            var text = new StringBuilder();
+            text.Append("SELECT * FROM dishes");
+
+            if (filterStatements != null && filterStatements.Count > 0)
+            {
+                text.Append(" WHERE ");
+                text.Append(filterStatements[0]);
+
+                for (int i = 1; i < filterStatements.Count; i++)
+                {
+                    text.Append(" AND");
+                    text.Append(filterStatements[i]);
+                }
+            }
+
+            if (sortStatements != null && sortStatements.Count > 0)
+            {
+                text.Append(" ORDER BY ");
+                text.Append(sortStatements[0]);
+
+                for (int i = 1; i < sortStatements.Count; i++)
+                {
+                    text.Append(", ");
+                    text.Append(sortStatements[i]);
+                }
+            }
+
+            using (var cmd = _unitOfWork.CreateCommand())
+            {
+                cmd.CommandText = text.ToString();
+
+                using (IDataReader reader = cmd.ExecuteReader())
+                {
+                    var dishes = new List<Dish>();
+
+                    while (reader.Read())
+                    {
+                        dishes.Add(new Dish
+                        {
+                            Id = (int)reader[0],
+                            Name = (string)reader[1],
+                            Portions = (int)reader[2],
+                            CookingTimeInMinutes = (int)reader[3],
+                            Weight = (int)reader[4],
+                            Recipe = (string)reader[5],
+                            MenuSection = (string)reader[6],
+                            Price = decimal.Parse(reader[7].ToString()),
+                            EnergyCategory = (string)reader[8]
+                        });
+                    }
+
+                    return dishes;
+                }
+            }
+        }
+
+        public Dish GetById(int id)
+        {
+            using (var cmd = _unitOfWork.CreateCommand())
+            {
+                cmd.CommandText = "SELECT * FROM dishes WHERE dish_id = @dish_id";
+
+                cmd.AddParameterWithValue("@dish_id", id);
+
+                using (IDataReader reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    if (reader == null)
+                    {
+                        return new Dish();
+                    }
+
+                    return new Dish
+                    {
+                        Id = (int)reader[0],
+                        Name = (string)reader[1],
+                        Portions = (int)reader[2],
+                        CookingTimeInMinutes = (int)reader[3],
+                        Weight = (int)reader[4],
+                        Recipe = (string)reader[5],
+                        MenuSection = (string)reader[6],
+                        Price = decimal.Parse(reader[7].ToString()),
+                        EnergyCategory = (string)reader[8]
+                    };
+                }
+            }
+        }
+
+        public (int maxPortions, int maxTime, int maxWeight, float maxPrice) GetMaxValues()
+        {
+            using (var cmd = _unitOfWork.CreateCommand())
+            {
+                cmd.CommandText = "SELECT MAX(dish_portions), MAX(cooking_time), MAX(mass), MAX(dish_price) FROM dishes";
+
+                using (IDataReader reader = cmd.ExecuteReader())
+                {
+                    reader.Read();
+                    if (reader == null)
+                    {
+                        return (0, 0, 0, 0);
+                    }
+
+                    return ((int)reader[0], (int)reader[1], (int)reader[2], float.Parse(reader[3].ToString()));
+                }
+            }
+
         }
 
         public bool Update(Dish entity)

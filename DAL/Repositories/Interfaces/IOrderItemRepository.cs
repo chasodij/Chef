@@ -1,5 +1,4 @@
 ﻿using chef.BLL.Entities;
-using chef.BLL.Repositories;
 using chef.BLL.Repositories.Interfaces;
 
 namespace chef.DAL.Repositories.Interfaces

@@ -24,7 +24,7 @@ namespace chef.DAL.Repositories.Implementations
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Product> GetAll()
+        public IEnumerable<Product> GetAll(List<string> searchStatements = null, List<string> sortStatements = null)
         {
             throw new System.NotImplementedException();
         }

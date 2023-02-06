@@ -3,8 +3,6 @@ using chef.BLL.UnitOfWork;
 using chef.DAL.Extensions;
 using chef.DAL.Repositories.Interfaces;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace chef.DAL.Repositories.Implementations
 {
@@ -27,14 +25,14 @@ namespace chef.DAL.Repositories.Implementations
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<OrderItem> GetAll()
+        public IEnumerable<OrderItem> GetAll(List<string> searchStatements = null, List<string> sortStatements = null)
         {
             throw new System.NotImplementedException();
         }
 
         public bool IsExistWithDishId(int id)
         {
-            using(var cmd = _unitOfWork.CreateCommand())
+            using (var cmd = _unitOfWork.CreateCommand())
             {
                 cmd.CommandText = "SELECT COUNT(dish_id) FROM order_items WHERE dish_id = @dish_id";
 
