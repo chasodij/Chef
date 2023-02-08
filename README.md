@@ -1,4 +1,4 @@
-<b> Chef 🍴 </b>
+<h2> Chef 🍴 </h2>
 
 This project is a simple restaurant management system that allows users to create orders, manage recipes, products in stock, and view some restaurant statistics. There are two types of users in the system: cashier and admin. 
 
