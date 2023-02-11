@@ -1,7 +1,7 @@
 ﻿
 namespace chef
 {
-    partial class dishes_Form
+    partial class DishesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,7 @@ namespace chef
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dishes_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DishesForm));
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
@@ -44,13 +44,21 @@ namespace chef
             this.filterButton = new System.Windows.Forms.Button();
             this.sortButton = new System.Windows.Forms.Button();
             this.detailsButton = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.portions = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menu_section = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.energy_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +85,15 @@ namespace chef
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.name,
+            this.portions,
+            this.time,
+            this.weight,
+            this.menu_section,
+            this.price,
+            this.energy_category});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -117,7 +134,7 @@ namespace chef
             this.addButton.Size = new System.Drawing.Size(82, 82);
             this.addButton.TabIndex = 1;
             this.addButton.UseVisualStyleBackColor = false;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // editButton
             // 
@@ -133,7 +150,7 @@ namespace chef
             this.editButton.Size = new System.Drawing.Size(82, 82);
             this.editButton.TabIndex = 2;
             this.editButton.UseVisualStyleBackColor = false;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click);
+            this.editButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // deleteButton
             // 
@@ -149,7 +166,7 @@ namespace chef
             this.deleteButton.Size = new System.Drawing.Size(82, 82);
             this.deleteButton.TabIndex = 3;
             this.deleteButton.UseVisualStyleBackColor = false;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // searchButton
             // 
@@ -164,7 +181,7 @@ namespace chef
             this.searchButton.TabIndex = 6;
             this.searchButton.Text = "Знайти";
             this.searchButton.UseVisualStyleBackColor = false;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // searchTextBox
             // 
@@ -189,7 +206,7 @@ namespace chef
             this.filterButton.Size = new System.Drawing.Size(82, 82);
             this.filterButton.TabIndex = 8;
             this.filterButton.UseVisualStyleBackColor = false;
-            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
+            this.filterButton.Click += new System.EventHandler(this.FilterButton_Click);
             // 
             // sortButton
             // 
@@ -206,7 +223,7 @@ namespace chef
             this.sortButton.Size = new System.Drawing.Size(82, 82);
             this.sortButton.TabIndex = 14;
             this.sortButton.UseVisualStyleBackColor = false;
-            this.sortButton.Click += new System.EventHandler(this.sortButton_Click);
+            this.sortButton.Click += new System.EventHandler(this.SortButton_Click);
             // 
             // detailsButton
             // 
@@ -220,12 +237,12 @@ namespace chef
             this.detailsButton.TabIndex = 4;
             this.detailsButton.Text = "Деталі...";
             this.detailsButton.UseVisualStyleBackColor = false;
-            this.detailsButton.Click += new System.EventHandler(this.detailsButton_Click);
+            this.detailsButton.Click += new System.EventHandler(this.DetailsButton_Click);
             // 
-            // errorProvider1
+            // errorProvider
             // 
-            this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProvider1.ContainerControl = this;
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // button1
             // 
@@ -242,7 +259,7 @@ namespace chef
             this.button1.Size = new System.Drawing.Size(95, 48);
             this.button1.TabIndex = 21;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // label1
             // 
@@ -251,7 +268,7 @@ namespace chef
             this.label1.Font = new System.Drawing.Font("Calibri", 15.73109F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(24, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 32);
+            this.label1.Size = new System.Drawing.Size(94, 33);
             this.label1.TabIndex = 20;
             this.label1.Text = "Страви";
             // 
@@ -285,6 +302,62 @@ namespace chef
             this.panel2.Size = new System.Drawing.Size(1149, 10);
             this.panel2.TabIndex = 23;
             // 
+            // id
+            // 
+            this.id.HeaderText = "Номер";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Назва";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // portions
+            // 
+            this.portions.HeaderText = "Кількість порцій";
+            this.portions.MinimumWidth = 6;
+            this.portions.Name = "portions";
+            this.portions.ReadOnly = true;
+            // 
+            // time
+            // 
+            this.time.HeaderText = "Час приготування";
+            this.time.MinimumWidth = 6;
+            this.time.Name = "time";
+            this.time.ReadOnly = true;
+            // 
+            // weight
+            // 
+            this.weight.HeaderText = "Маса на виході";
+            this.weight.MinimumWidth = 6;
+            this.weight.Name = "weight";
+            this.weight.ReadOnly = true;
+            // 
+            // menu_section
+            // 
+            this.menu_section.HeaderText = "Розділ меню";
+            this.menu_section.MinimumWidth = 6;
+            this.menu_section.Name = "menu_section";
+            this.menu_section.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Ціна";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // energy_category
+            // 
+            this.energy_category.HeaderText = "Енергетична категорія";
+            this.energy_category.MinimumWidth = 6;
+            this.energy_category.Name = "energy_category";
+            this.energy_category.ReadOnly = true;
+            // 
             // dishes_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -298,10 +371,10 @@ namespace chef
             this.Name = "dishes_Form";
             this.Text = "Страви";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.dishes_Form_FormClosing);
-            this.Load += new System.EventHandler(this.dishes_Form_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DishesForm_FormClosing);
+            this.Load += new System.EventHandler(this.DishesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -319,10 +392,18 @@ namespace chef
         private System.Windows.Forms.Button filterButton;
         private System.Windows.Forms.Button sortButton;
         private System.Windows.Forms.Button detailsButton;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn portions;
+        private System.Windows.Forms.DataGridViewTextBoxColumn time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn weight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn menu_section;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn energy_category;
     }
 }

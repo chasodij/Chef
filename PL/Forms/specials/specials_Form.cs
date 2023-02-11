@@ -11,13 +11,13 @@ namespace chef
         readonly string connectionstring = "Data Source=DESKTOP-MM9MS8C\\SQLEXPRESS;Initial Catalog=chef_db;Integrated Security=True";
         bool isSearched = false;
         specials_Filter_Form filter_Form;
-        specials_Sort_Form sort_Form;
+        SpecialsSortForm sort_Form;
         public specials_Form(string connectionstring)
         {
             InitializeComponent();
             this.connectionstring = connectionstring;
             filter_Form = new specials_Filter_Form(this, connectionstring);
-            sort_Form = new specials_Sort_Form(this);
+            sort_Form = new SpecialsSortForm(sortAndFilter);
         }
 
         private void specials_Form_Load(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace chef
 
         private string GetSortData()
         {
-            string order = "ORDER BY " + sort_Form.sortDish + sort_Form.sortPrice + sort_Form.sortDate;
+            string order = "ORDER BY " + sort_Form.DishStatement + sort_Form.PriceStatement + sort_Form.DateStatement;
             if (order == "ORDER BY ")
                 return "";
             return order.Substring(0, order.Length - 2);

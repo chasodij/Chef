@@ -1,4 +1,6 @@
-﻿using System;
+﻿using chef.BLL.Services;
+using chef.DAL.UnitOfWork;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
@@ -27,7 +29,7 @@ namespace chef
 
         private void dishesButton_Click(object sender, EventArgs e)
         {
-            new dishes_Form(connectionstring).ShowDialog();
+            new DishesForm(new DishService(new AdoUnitOfWorkFactory(), new MsWordService())).ShowDialog();
         }
 
         private void specialsButton_Click(object sender, EventArgs e)
