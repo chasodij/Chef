@@ -7,6 +7,6 @@ namespace chef.BLL.Repositories.Interfaces
         void Create(T entity);
         void Delete(int id);
         IEnumerable<T> GetAll(List<string> filterStatements = null, List<string> sortStatements = null);
-        bool Update(T entity);
+        void Update(T entity);
     }
 }

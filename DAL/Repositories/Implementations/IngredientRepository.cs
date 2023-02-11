@@ -36,11 +36,17 @@ namespace chef.DAL.Repositories.Implementations
         {
             using (var cmd = _unitOfWork.CreateCommand())
             {
-                cmd.CommandText = "SELECT types_of_products.type_name, " +
-                                         "ingredients.ingredient_amount, " +
-                                         "types_of_products.units_of_measurement " +
-                                  "FROM types_of_products JOIN ingredients ON types_of_products.type_id = ingredients.type_id " +
-                                  "WHERE ingredients.dish_id = @dish_id";
+                cmd.CommandText = "SELECT " +
+                                    "types_of_products.type_id, " +
+                                    "types_of_products.type_name, " +
+                                    "types_of_products.proteins, " +
+                                    "types_of_products.fats, " +
+                                    "types_of_products.carbohydrates, " +
+                                    "types_of_products.energy_value, " +
+                                    "types_of_products.units_of_measurement, " +
+                                    "ingredients.ingredient_amount " +
+                                "FROM types_of_products JOIN ingredients ON types_of_products.type_id = ingredients.type_id " +
+                                "WHERE ingredients.dish_id = @dish_id";
 
                 cmd.AddParameterWithValue("@dish_id", id);
 
@@ -52,9 +58,17 @@ namespace chef.DAL.Repositories.Implementations
                     {
                         ingredients.Add(new Ingredient
                         {
-                            ProductTypeName = (string)reader[0],
-                            AmountInUnits = double.Parse(reader[1].ToString()),
-                            UnitsOfMeasurement = (string)reader[2]
+                            ProductType = new ProductType
+                            {
+                                Id = (int)reader[0],
+                                Name = (string)reader[1],
+                                ProteinsPer100g = double.Parse(reader[2].ToString()),
+                                FatsPer100g = double.Parse(reader[3].ToString()),
+                                CarbohydratesPer100g = double.Parse(reader[4].ToString()),
+                                CaloriesPer100g = double.Parse(reader[5].ToString()),
+                                UnitsOfMeasurement = (string)reader[6],
+                            },
+                            AmountInUnits = double.Parse(reader[7].ToString())
                         });
                     }
                 }
@@ -63,7 +77,7 @@ namespace chef.DAL.Repositories.Implementations
             }
         }
 
-        public bool Update(Ingredient entity)
+        public void Update(Ingredient entity)
         {
             throw new NotImplementedException();
         }

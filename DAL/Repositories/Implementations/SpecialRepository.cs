@@ -45,7 +45,7 @@ namespace chef.DAL.Repositories.Implementations
             }
         }
 
-        public bool Update(Special entity)
+        public void Update(Special entity)
         {
             throw new NotImplementedException();
         }

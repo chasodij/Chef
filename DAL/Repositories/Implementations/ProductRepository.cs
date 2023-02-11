@@ -29,7 +29,7 @@ namespace chef.DAL.Repositories.Implementations
             throw new System.NotImplementedException();
         }
 
-        public bool Update(Product entity)
+        public void Update(Product entity)
         {
             throw new System.NotImplementedException();
         }
