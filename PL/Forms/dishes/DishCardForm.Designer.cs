@@ -1,7 +1,7 @@
 ﻿
 namespace chef
 {
-    partial class dish_card
+    partial class DishCardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,14 +33,21 @@ namespace chef
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dish_card));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DishCardForm));
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.headerLabel = new System.Windows.Forms.Label();
             this.dish_nameLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.massLabel = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.units = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proteins = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carbohydrates = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.energy_value = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +69,14 @@ namespace chef
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.amount,
+            this.units,
+            this.proteins,
+            this.fats,
+            this.carbohydrates,
+            this.energy_value});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.865546F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -129,7 +144,7 @@ namespace chef
             this.button1.TabIndex = 21;
             this.button1.Text = "Зберегти";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.SaveDocument_Click);
             // 
             // massLabel
             // 
@@ -158,9 +173,65 @@ namespace chef
             this.button2.Size = new System.Drawing.Size(95, 48);
             this.button2.TabIndex = 22;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // dish_card
+            // name
+            // 
+            this.name.HeaderText = "Назва";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Кількість";
+            this.amount.MinimumWidth = 6;
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            this.amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // units
+            // 
+            this.units.HeaderText = "Одиниці виміру";
+            this.units.MinimumWidth = 6;
+            this.units.Name = "units";
+            this.units.ReadOnly = true;
+            this.units.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // proteins
+            // 
+            this.proteins.HeaderText = "Білки, г";
+            this.proteins.MinimumWidth = 6;
+            this.proteins.Name = "proteins";
+            this.proteins.ReadOnly = true;
+            this.proteins.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // fats
+            // 
+            this.fats.HeaderText = "Жири, г";
+            this.fats.MinimumWidth = 6;
+            this.fats.Name = "fats";
+            this.fats.ReadOnly = true;
+            this.fats.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // carbohydrates
+            // 
+            this.carbohydrates.HeaderText = "Вуглеводи, г";
+            this.carbohydrates.MinimumWidth = 6;
+            this.carbohydrates.Name = "carbohydrates";
+            this.carbohydrates.ReadOnly = true;
+            this.carbohydrates.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // energy_value
+            // 
+            this.energy_value.HeaderText = "Енергетична цінність, ккал";
+            this.energy_value.MinimumWidth = 6;
+            this.energy_value.Name = "energy_value";
+            this.energy_value.ReadOnly = true;
+            this.energy_value.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // DishCardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,9 +244,10 @@ namespace chef
             this.Controls.Add(this.headerLabel);
             this.Controls.Add(this.dataGridView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "dish_card";
+            this.Name = "DishCardForm";
             this.Text = "Карта-розкладка";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DishCardForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -187,8 +259,15 @@ namespace chef
         private System.Windows.Forms.Label headerLabel;
         private System.Windows.Forms.Label dish_nameLabel;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.Label massLabel;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn units;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proteins;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn carbohydrates;
+        private System.Windows.Forms.DataGridViewTextBoxColumn energy_value;
     }
 }
