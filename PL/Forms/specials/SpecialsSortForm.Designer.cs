@@ -1,7 +1,7 @@
 ﻿
 namespace chef
 {
-    partial class specials_Sort_Form
+    partial class SpecialsSortForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace chef
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(specials_Sort_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpecialsSortForm));
             this.dateCheckBox = new System.Windows.Forms.CheckBox();
             this.priceCheckBox = new System.Windows.Forms.CheckBox();
             this.dishCheckBox = new System.Windows.Forms.CheckBox();
@@ -59,7 +59,7 @@ namespace chef
             this.dateCheckBox.TabIndex = 5;
             this.dateCheckBox.Text = "Дата";
             this.dateCheckBox.UseVisualStyleBackColor = true;
-            this.dateCheckBox.CheckedChanged += new System.EventHandler(this.type_nameCheckBox_CheckedChanged);
+            this.dateCheckBox.CheckedChanged += new System.EventHandler(this.SortRowCheckBox_CheckedChanged);
             // 
             // priceCheckBox
             // 
@@ -71,7 +71,7 @@ namespace chef
             this.priceCheckBox.TabIndex = 6;
             this.priceCheckBox.Text = "Ціна";
             this.priceCheckBox.UseVisualStyleBackColor = true;
-            this.priceCheckBox.CheckedChanged += new System.EventHandler(this.type_nameCheckBox_CheckedChanged);
+            this.priceCheckBox.CheckedChanged += new System.EventHandler(this.SortRowCheckBox_CheckedChanged);
             // 
             // dishCheckBox
             // 
@@ -83,7 +83,7 @@ namespace chef
             this.dishCheckBox.TabIndex = 6;
             this.dishCheckBox.Text = "Страва";
             this.dishCheckBox.UseVisualStyleBackColor = true;
-            this.dishCheckBox.CheckedChanged += new System.EventHandler(this.type_nameCheckBox_CheckedChanged);
+            this.dishCheckBox.CheckedChanged += new System.EventHandler(this.SortRowCheckBox_CheckedChanged);
             // 
             // date2
             // 
@@ -95,7 +95,7 @@ namespace chef
             this.date2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.date2.TabIndex = 7;
             this.date2.TabStop = false;
-            this.date2.Click += new System.EventHandler(this.name2_Click);
+            this.date2.Click += new System.EventHandler(this.Picture2_Click);
             // 
             // date1
             // 
@@ -107,7 +107,7 @@ namespace chef
             this.date1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.date1.TabIndex = 7;
             this.date1.TabStop = false;
-            this.date1.Click += new System.EventHandler(this.name1_Click);
+            this.date1.Click += new System.EventHandler(this.Picture1_Click);
             // 
             // price2
             // 
@@ -119,7 +119,7 @@ namespace chef
             this.price2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.price2.TabIndex = 7;
             this.price2.TabStop = false;
-            this.price2.Click += new System.EventHandler(this.name2_Click);
+            this.price2.Click += new System.EventHandler(this.Picture2_Click);
             // 
             // price1
             // 
@@ -131,7 +131,7 @@ namespace chef
             this.price1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.price1.TabIndex = 7;
             this.price1.TabStop = false;
-            this.price1.Click += new System.EventHandler(this.name1_Click);
+            this.price1.Click += new System.EventHandler(this.Picture1_Click);
             // 
             // dish2
             // 
@@ -143,7 +143,7 @@ namespace chef
             this.dish2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.dish2.TabIndex = 7;
             this.dish2.TabStop = false;
-            this.dish2.Click += new System.EventHandler(this.name2_Click);
+            this.dish2.Click += new System.EventHandler(this.Picture2_Click);
             // 
             // dish1
             // 
@@ -155,7 +155,7 @@ namespace chef
             this.dish1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.dish1.TabIndex = 7;
             this.dish1.TabStop = false;
-            this.dish1.Click += new System.EventHandler(this.name1_Click);
+            this.dish1.Click += new System.EventHandler(this.Picture1_Click);
             // 
             // button1
             // 
@@ -169,7 +169,7 @@ namespace chef
             this.button1.TabIndex = 8;
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.HideForm);
             // 
             // button2
             // 
@@ -183,7 +183,7 @@ namespace chef
             this.button2.TabIndex = 8;
             this.button2.Text = "Скасувати\r\nсортування";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.ClearSortingButton_Click);
             // 
             // specials_Sort_Form
             // 
@@ -205,8 +205,8 @@ namespace chef
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "specials_Sort_Form";
             this.Text = "Сортування";
-            this.Deactivate += new System.EventHandler(this.types_of_products_Sort_Form_Leave);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.types_of_products_Sort_Form_FormClosing);
+            this.Deactivate += new System.EventHandler(this.HideForm);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CloseForm);
             ((System.ComponentModel.ISupportInitialize)(this.date2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.price2)).EndInit();

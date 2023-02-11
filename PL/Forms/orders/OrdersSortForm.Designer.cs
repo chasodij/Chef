@@ -1,7 +1,7 @@
 ﻿
 namespace chef
 {
-    partial class orders_Sort_Form
+    partial class OrdersSortForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace chef
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(orders_Sort_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdersSortForm));
             this.dateCheckBox = new System.Windows.Forms.CheckBox();
             this.totalCheckBox = new System.Windows.Forms.CheckBox();
             this.numCheckBox = new System.Windows.Forms.CheckBox();
@@ -59,7 +59,7 @@ namespace chef
             this.dateCheckBox.TabIndex = 5;
             this.dateCheckBox.Text = "Час замовлення";
             this.dateCheckBox.UseVisualStyleBackColor = true;
-            this.dateCheckBox.CheckedChanged += new System.EventHandler(this.type_nameCheckBox_CheckedChanged);
+            this.dateCheckBox.CheckedChanged += new System.EventHandler(this.SortRowCheckBox_CheckedChanged);
             // 
             // totalCheckBox
             // 
@@ -71,7 +71,7 @@ namespace chef
             this.totalCheckBox.TabIndex = 6;
             this.totalCheckBox.Text = "Сума";
             this.totalCheckBox.UseVisualStyleBackColor = true;
-            this.totalCheckBox.CheckedChanged += new System.EventHandler(this.type_nameCheckBox_CheckedChanged);
+            this.totalCheckBox.CheckedChanged += new System.EventHandler(this.SortRowCheckBox_CheckedChanged);
             // 
             // numCheckBox
             // 
@@ -83,7 +83,7 @@ namespace chef
             this.numCheckBox.TabIndex = 6;
             this.numCheckBox.Text = "Номер замовлення";
             this.numCheckBox.UseVisualStyleBackColor = true;
-            this.numCheckBox.CheckedChanged += new System.EventHandler(this.type_nameCheckBox_CheckedChanged);
+            this.numCheckBox.CheckedChanged += new System.EventHandler(this.SortRowCheckBox_CheckedChanged);
             // 
             // date2
             // 
@@ -95,7 +95,7 @@ namespace chef
             this.date2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.date2.TabIndex = 7;
             this.date2.TabStop = false;
-            this.date2.Click += new System.EventHandler(this.name2_Click);
+            this.date2.Click += new System.EventHandler(this.Picture2_Click);
             // 
             // date1
             // 
@@ -107,7 +107,7 @@ namespace chef
             this.date1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.date1.TabIndex = 7;
             this.date1.TabStop = false;
-            this.date1.Click += new System.EventHandler(this.name1_Click);
+            this.date1.Click += new System.EventHandler(this.Picture1_Click);
             // 
             // total2
             // 
@@ -119,7 +119,7 @@ namespace chef
             this.total2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.total2.TabIndex = 7;
             this.total2.TabStop = false;
-            this.total2.Click += new System.EventHandler(this.name2_Click);
+            this.total2.Click += new System.EventHandler(this.Picture2_Click);
             // 
             // total1
             // 
@@ -131,7 +131,7 @@ namespace chef
             this.total1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.total1.TabIndex = 7;
             this.total1.TabStop = false;
-            this.total1.Click += new System.EventHandler(this.name1_Click);
+            this.total1.Click += new System.EventHandler(this.Picture1_Click);
             // 
             // num2
             // 
@@ -143,7 +143,7 @@ namespace chef
             this.num2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.num2.TabIndex = 7;
             this.num2.TabStop = false;
-            this.num2.Click += new System.EventHandler(this.name2_Click);
+            this.num2.Click += new System.EventHandler(this.Picture2_Click);
             // 
             // num1
             // 
@@ -155,7 +155,7 @@ namespace chef
             this.num1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.num1.TabIndex = 7;
             this.num1.TabStop = false;
-            this.num1.Click += new System.EventHandler(this.name1_Click);
+            this.num1.Click += new System.EventHandler(this.Picture1_Click);
             // 
             // button1
             // 
@@ -169,7 +169,7 @@ namespace chef
             this.button1.TabIndex = 8;
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.HideForm);
             // 
             // button2
             // 
@@ -183,7 +183,7 @@ namespace chef
             this.button2.TabIndex = 8;
             this.button2.Text = "Скасувати\r\nсортування";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.ClearSortingButton_Click);
             // 
             // orders_Sort_Form
             // 
@@ -205,8 +205,8 @@ namespace chef
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "orders_Sort_Form";
             this.Text = "Сортування";
-            this.Deactivate += new System.EventHandler(this.types_of_products_Sort_Form_Leave);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.types_of_products_Sort_Form_FormClosing);
+            this.Deactivate += new System.EventHandler(this.HideForm);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CloseForm);
             ((System.ComponentModel.ISupportInitialize)(this.date2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.total2)).EndInit();

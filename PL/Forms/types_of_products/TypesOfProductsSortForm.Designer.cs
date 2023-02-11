@@ -1,7 +1,7 @@
 ﻿
 namespace chef
 {
-    partial class types_of_products_Sort_Form
+    partial class TypesOfProductsSortForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace chef
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(types_of_products_Sort_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TypesOfProductsSortForm));
             this.energy_valueCheckBox = new System.Windows.Forms.CheckBox();
             this.carbohydratesCheckBox = new System.Windows.Forms.CheckBox();
             this.fatsCheckBox = new System.Windows.Forms.CheckBox();
@@ -69,7 +69,7 @@ namespace chef
             this.energy_valueCheckBox.TabIndex = 3;
             this.energy_valueCheckBox.Text = "Енергетична\r\nцінність";
             this.energy_valueCheckBox.UseVisualStyleBackColor = true;
-            this.energy_valueCheckBox.CheckedChanged += new System.EventHandler(this.type_nameCheckBox_CheckedChanged);
+            this.energy_valueCheckBox.CheckedChanged += new System.EventHandler(this.SortRowCheckBox_CheckedChanged);
             // 
             // carbohydratesCheckBox
             // 
@@ -81,7 +81,7 @@ namespace chef
             this.carbohydratesCheckBox.TabIndex = 4;
             this.carbohydratesCheckBox.Text = "Вуглеводи";
             this.carbohydratesCheckBox.UseVisualStyleBackColor = true;
-            this.carbohydratesCheckBox.CheckedChanged += new System.EventHandler(this.type_nameCheckBox_CheckedChanged);
+            this.carbohydratesCheckBox.CheckedChanged += new System.EventHandler(this.SortRowCheckBox_CheckedChanged);
             // 
             // fatsCheckBox
             // 
@@ -93,7 +93,7 @@ namespace chef
             this.fatsCheckBox.TabIndex = 5;
             this.fatsCheckBox.Text = "Жири";
             this.fatsCheckBox.UseVisualStyleBackColor = true;
-            this.fatsCheckBox.CheckedChanged += new System.EventHandler(this.type_nameCheckBox_CheckedChanged);
+            this.fatsCheckBox.CheckedChanged += new System.EventHandler(this.SortRowCheckBox_CheckedChanged);
             // 
             // proteinsCheckBox
             // 
@@ -105,7 +105,7 @@ namespace chef
             this.proteinsCheckBox.TabIndex = 6;
             this.proteinsCheckBox.Text = "Білки";
             this.proteinsCheckBox.UseVisualStyleBackColor = true;
-            this.proteinsCheckBox.CheckedChanged += new System.EventHandler(this.type_nameCheckBox_CheckedChanged);
+            this.proteinsCheckBox.CheckedChanged += new System.EventHandler(this.SortRowCheckBox_CheckedChanged);
             // 
             // type_nameCheckBox
             // 
@@ -117,7 +117,7 @@ namespace chef
             this.type_nameCheckBox.TabIndex = 6;
             this.type_nameCheckBox.Text = "Назва";
             this.type_nameCheckBox.UseVisualStyleBackColor = true;
-            this.type_nameCheckBox.CheckedChanged += new System.EventHandler(this.type_nameCheckBox_CheckedChanged);
+            this.type_nameCheckBox.CheckedChanged += new System.EventHandler(this.SortRowCheckBox_CheckedChanged);
             // 
             // energy2
             // 
@@ -129,7 +129,7 @@ namespace chef
             this.energy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.energy2.TabIndex = 7;
             this.energy2.TabStop = false;
-            this.energy2.Click += new System.EventHandler(this.name2_Click);
+            this.energy2.Click += new System.EventHandler(this.Picture2_Click);
             // 
             // energy1
             // 
@@ -141,7 +141,7 @@ namespace chef
             this.energy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.energy1.TabIndex = 7;
             this.energy1.TabStop = false;
-            this.energy1.Click += new System.EventHandler(this.name1_Click);
+            this.energy1.Click += new System.EventHandler(this.Picture1_Click);
             // 
             // carbohydrates2
             // 
@@ -153,7 +153,7 @@ namespace chef
             this.carbohydrates2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.carbohydrates2.TabIndex = 7;
             this.carbohydrates2.TabStop = false;
-            this.carbohydrates2.Click += new System.EventHandler(this.name2_Click);
+            this.carbohydrates2.Click += new System.EventHandler(this.Picture2_Click);
             // 
             // carbohydrates1
             // 
@@ -165,7 +165,7 @@ namespace chef
             this.carbohydrates1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.carbohydrates1.TabIndex = 7;
             this.carbohydrates1.TabStop = false;
-            this.carbohydrates1.Click += new System.EventHandler(this.name1_Click);
+            this.carbohydrates1.Click += new System.EventHandler(this.Picture1_Click);
             // 
             // fats2
             // 
@@ -177,7 +177,7 @@ namespace chef
             this.fats2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.fats2.TabIndex = 7;
             this.fats2.TabStop = false;
-            this.fats2.Click += new System.EventHandler(this.name2_Click);
+            this.fats2.Click += new System.EventHandler(this.Picture2_Click);
             // 
             // fats1
             // 
@@ -189,7 +189,7 @@ namespace chef
             this.fats1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.fats1.TabIndex = 7;
             this.fats1.TabStop = false;
-            this.fats1.Click += new System.EventHandler(this.name1_Click);
+            this.fats1.Click += new System.EventHandler(this.Picture1_Click);
             // 
             // proteins2
             // 
@@ -201,7 +201,7 @@ namespace chef
             this.proteins2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.proteins2.TabIndex = 7;
             this.proteins2.TabStop = false;
-            this.proteins2.Click += new System.EventHandler(this.name2_Click);
+            this.proteins2.Click += new System.EventHandler(this.Picture2_Click);
             // 
             // proteins1
             // 
@@ -213,7 +213,7 @@ namespace chef
             this.proteins1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.proteins1.TabIndex = 7;
             this.proteins1.TabStop = false;
-            this.proteins1.Click += new System.EventHandler(this.name1_Click);
+            this.proteins1.Click += new System.EventHandler(this.Picture1_Click);
             // 
             // name2
             // 
@@ -225,7 +225,7 @@ namespace chef
             this.name2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.name2.TabIndex = 7;
             this.name2.TabStop = false;
-            this.name2.Click += new System.EventHandler(this.name2_Click);
+            this.name2.Click += new System.EventHandler(this.Picture2_Click);
             // 
             // name1
             // 
@@ -237,7 +237,7 @@ namespace chef
             this.name1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.name1.TabIndex = 7;
             this.name1.TabStop = false;
-            this.name1.Click += new System.EventHandler(this.name1_Click);
+            this.name1.Click += new System.EventHandler(this.Picture1_Click);
             // 
             // button1
             // 
@@ -251,7 +251,7 @@ namespace chef
             this.button1.TabIndex = 8;
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.HideForm);
             // 
             // button2
             // 
@@ -265,7 +265,7 @@ namespace chef
             this.button2.TabIndex = 8;
             this.button2.Text = "Скасувати\r\nсортування";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.ClearSortingButton_Click);
             // 
             // types_of_products_Sort_Form
             // 
@@ -293,8 +293,8 @@ namespace chef
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "types_of_products_Sort_Form";
             this.Text = "types_of_products_Sort_Form";
-            this.Deactivate += new System.EventHandler(this.types_of_products_Sort_Form_Leave);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.types_of_products_Sort_Form_FormClosing);
+            this.Deactivate += new System.EventHandler(this.HideForm);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CloseForm);
             ((System.ComponentModel.ISupportInitialize)(this.energy2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.energy1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carbohydrates2)).EndInit();
