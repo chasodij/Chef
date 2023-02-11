@@ -44,7 +44,7 @@ namespace chef.DAL.Repositories.Implementations
             }
         }
 
-        public bool Update(OrderItem entity)
+        public void Update(OrderItem entity)
         {
             throw new System.NotImplementedException();
         }

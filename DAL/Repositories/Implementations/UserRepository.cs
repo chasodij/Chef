@@ -30,7 +30,7 @@ namespace chef.DAL.Repositories.Implementations
             throw new NotImplementedException();
         }
 
-        public bool Update(User entity)
+        public void Update(User entity)
         {
             throw new NotImplementedException();
         }
