@@ -1,7 +1,7 @@
 ﻿
 namespace chef
 {
-    partial class dishes_Details_Form
+    partial class DishesDetailsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@ namespace chef
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dishes_Details_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DishesDetailsForm));
             this.dish_nameLabel = new System.Windows.Forms.Label();
             this.dish_nameTextBox = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
@@ -93,7 +93,7 @@ namespace chef
             this.cancelButton.TabIndex = 2;
             this.cancelButton.Text = "Вийти";
             this.cancelButton.UseVisualStyleBackColor = false;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // menu_sectionLabel
             // 
@@ -348,9 +348,9 @@ namespace chef
             this.button1.TabIndex = 1;
             this.button1.Text = "Переглянути розкладку";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.ShowDishCard_Click);
             // 
-            // dishes_Details_Form
+            // DishesDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -380,8 +380,9 @@ namespace chef
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "dishes_Details_Form";
+            this.Name = "DishesDetailsForm";
             this.Text = "dishes_Details_Form";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DishesDetailsForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
