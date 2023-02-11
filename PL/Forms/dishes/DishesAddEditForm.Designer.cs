@@ -1,7 +1,7 @@
 ﻿
 namespace chef
 {
-    partial class dishes_AddEdit_Form
+    partial class DishesAddEditForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,12 +34,12 @@ namespace chef
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dishes_AddEdit_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DishesAddEditForm));
             this.dish_nameLabel = new System.Windows.Forms.Label();
-            this.dish_nameTextBox = new System.Windows.Forms.TextBox();
+            this.dishNameTextBox = new System.Windows.Forms.TextBox();
             this.saveButon = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.menu_sectionComboBox = new System.Windows.Forms.ComboBox();
+            this.menuSectionComboBox = new System.Windows.Forms.ComboBox();
             this.menu_sectionLabel = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.type_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -48,14 +48,14 @@ namespace chef
             this.warning = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isEdited = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dish_portionsLabel = new System.Windows.Forms.Label();
-            this.dish_portionsTextBox = new System.Windows.Forms.NumericUpDown();
+            this.dishPortionsTextBox = new System.Windows.Forms.NumericUpDown();
             this.cooking_timeLabel = new System.Windows.Forms.Label();
-            this.cooking_timeTextBox = new System.Windows.Forms.NumericUpDown();
+            this.cookingTimeTextBox = new System.Windows.Forms.NumericUpDown();
             this.cooking_timeLabel1 = new System.Windows.Forms.Label();
             this.massLabel = new System.Windows.Forms.Label();
-            this.massTextBox = new System.Windows.Forms.NumericUpDown();
+            this.weightTextBox = new System.Windows.Forms.NumericUpDown();
             this.dish_priceLabel = new System.Windows.Forms.Label();
-            this.dish_priceTextBox = new System.Windows.Forms.NumericUpDown();
+            this.dishPriceTextBox = new System.Windows.Forms.NumericUpDown();
             this.dish_priceLabel1 = new System.Windows.Forms.Label();
             this.massLabel1 = new System.Windows.Forms.Label();
             this.recipeLabel = new System.Windows.Forms.Label();
@@ -66,10 +66,10 @@ namespace chef
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.warningLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dish_portionsTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cooking_timeTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.massTextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dish_priceTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dishPortionsTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cookingTimeTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weightTextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dishPriceTextBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,12 +86,12 @@ namespace chef
             // 
             // dish_nameTextBox
             // 
-            this.dish_nameTextBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dish_nameTextBox.Location = new System.Drawing.Point(584, 21);
-            this.dish_nameTextBox.Name = "dish_nameTextBox";
-            this.dish_nameTextBox.Size = new System.Drawing.Size(427, 36);
-            this.dish_nameTextBox.TabIndex = 1;
-            this.dish_nameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.dish_nameTextBox_Validating);
+            this.dishNameTextBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dishNameTextBox.Location = new System.Drawing.Point(584, 21);
+            this.dishNameTextBox.Name = "dish_nameTextBox";
+            this.dishNameTextBox.Size = new System.Drawing.Size(427, 36);
+            this.dishNameTextBox.TabIndex = 1;
+            this.dishNameTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.DishNameTextBox_Validating);
             // 
             // saveButon
             // 
@@ -105,7 +105,7 @@ namespace chef
             this.saveButon.TabIndex = 8;
             this.saveButon.Text = "button1";
             this.saveButon.UseVisualStyleBackColor = false;
-            this.saveButon.Click += new System.EventHandler(this.saveButon_Click);
+            this.saveButon.Click += new System.EventHandler(this.SaveButon_Click);
             // 
             // cancelButton
             // 
@@ -119,13 +119,13 @@ namespace chef
             this.cancelButton.TabIndex = 9;
             this.cancelButton.Text = "Скасувати";
             this.cancelButton.UseVisualStyleBackColor = false;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // menu_sectionComboBox
             // 
-            this.menu_sectionComboBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.menu_sectionComboBox.FormattingEnabled = true;
-            this.menu_sectionComboBox.Items.AddRange(new object[] {
+            this.menuSectionComboBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.menuSectionComboBox.FormattingEnabled = true;
+            this.menuSectionComboBox.Items.AddRange(new object[] {
             "Холодні страви та закуски",
             "Гарячі закуски",
             "Перші страви",
@@ -135,11 +135,11 @@ namespace chef
             "Десерти",
             "Безалкогольні напої",
             "Алкогольні напої"});
-            this.menu_sectionComboBox.Location = new System.Drawing.Point(584, 73);
-            this.menu_sectionComboBox.Name = "menu_sectionComboBox";
-            this.menu_sectionComboBox.Size = new System.Drawing.Size(262, 36);
-            this.menu_sectionComboBox.TabIndex = 2;
-            this.menu_sectionComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.menu_sectionComboBox_Validating);
+            this.menuSectionComboBox.Location = new System.Drawing.Point(584, 73);
+            this.menuSectionComboBox.Name = "menu_sectionComboBox";
+            this.menuSectionComboBox.Size = new System.Drawing.Size(262, 36);
+            this.menuSectionComboBox.TabIndex = 2;
+            this.menuSectionComboBox.Validating += new System.ComponentModel.CancelEventHandler(this.MenuSectionComboBox_Validating);
             // 
             // menu_sectionLabel
             // 
@@ -199,9 +199,9 @@ namespace chef
             this.dataGridView.RowTemplate.Height = 30;
             this.dataGridView.Size = new System.Drawing.Size(368, 450);
             this.dataGridView.TabIndex = 17;
-            this.dataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dataGridView_CellBeginEdit);
-            this.dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellEndEdit);
-            this.dataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.dataGridView_Validating);
+            this.dataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.DataGridView_CellBeginEdit);
+            this.dataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellEndEdit);
+            this.dataGridView.Validating += new System.ComponentModel.CancelEventHandler(this.DataGridView_Validating);
             // 
             // type_id
             // 
@@ -259,22 +259,22 @@ namespace chef
             // 
             // dish_portionsTextBox
             // 
-            this.dish_portionsTextBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dish_portionsTextBox.Location = new System.Drawing.Point(584, 123);
-            this.dish_portionsTextBox.Maximum = new decimal(new int[] {
+            this.dishPortionsTextBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dishPortionsTextBox.Location = new System.Drawing.Point(584, 123);
+            this.dishPortionsTextBox.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.dish_portionsTextBox.Minimum = new decimal(new int[] {
+            this.dishPortionsTextBox.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.dish_portionsTextBox.Name = "dish_portionsTextBox";
-            this.dish_portionsTextBox.Size = new System.Drawing.Size(173, 36);
-            this.dish_portionsTextBox.TabIndex = 3;
-            this.dish_portionsTextBox.Value = new decimal(new int[] {
+            this.dishPortionsTextBox.Name = "dish_portionsTextBox";
+            this.dishPortionsTextBox.Size = new System.Drawing.Size(173, 36);
+            this.dishPortionsTextBox.TabIndex = 3;
+            this.dishPortionsTextBox.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -293,22 +293,22 @@ namespace chef
             // 
             // cooking_timeTextBox
             // 
-            this.cooking_timeTextBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cooking_timeTextBox.Location = new System.Drawing.Point(584, 174);
-            this.cooking_timeTextBox.Maximum = new decimal(new int[] {
+            this.cookingTimeTextBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cookingTimeTextBox.Location = new System.Drawing.Point(584, 174);
+            this.cookingTimeTextBox.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.cooking_timeTextBox.Minimum = new decimal(new int[] {
+            this.cookingTimeTextBox.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.cooking_timeTextBox.Name = "cooking_timeTextBox";
-            this.cooking_timeTextBox.Size = new System.Drawing.Size(173, 36);
-            this.cooking_timeTextBox.TabIndex = 5;
-            this.cooking_timeTextBox.Value = new decimal(new int[] {
+            this.cookingTimeTextBox.Name = "cooking_timeTextBox";
+            this.cookingTimeTextBox.Size = new System.Drawing.Size(173, 36);
+            this.cookingTimeTextBox.TabIndex = 5;
+            this.cookingTimeTextBox.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -338,22 +338,22 @@ namespace chef
             // 
             // massTextBox
             // 
-            this.massTextBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.massTextBox.Location = new System.Drawing.Point(948, 123);
-            this.massTextBox.Maximum = new decimal(new int[] {
+            this.weightTextBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.weightTextBox.Location = new System.Drawing.Point(948, 123);
+            this.weightTextBox.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.massTextBox.Minimum = new decimal(new int[] {
+            this.weightTextBox.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.massTextBox.Name = "massTextBox";
-            this.massTextBox.Size = new System.Drawing.Size(173, 36);
-            this.massTextBox.TabIndex = 4;
-            this.massTextBox.Value = new decimal(new int[] {
+            this.weightTextBox.Name = "massTextBox";
+            this.weightTextBox.Size = new System.Drawing.Size(173, 36);
+            this.weightTextBox.TabIndex = 4;
+            this.weightTextBox.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -372,22 +372,22 @@ namespace chef
             // 
             // dish_priceTextBox
             // 
-            this.dish_priceTextBox.DecimalPlaces = 2;
-            this.dish_priceTextBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dish_priceTextBox.Increment = new decimal(new int[] {
+            this.dishPriceTextBox.DecimalPlaces = 2;
+            this.dishPriceTextBox.Font = new System.Drawing.Font("Calibri", 13.91597F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dishPriceTextBox.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.dish_priceTextBox.Location = new System.Drawing.Point(948, 174);
-            this.dish_priceTextBox.Maximum = new decimal(new int[] {
+            this.dishPriceTextBox.Location = new System.Drawing.Point(948, 174);
+            this.dishPriceTextBox.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.dish_priceTextBox.Name = "dish_priceTextBox";
-            this.dish_priceTextBox.Size = new System.Drawing.Size(173, 36);
-            this.dish_priceTextBox.TabIndex = 6;
+            this.dishPriceTextBox.Name = "dish_priceTextBox";
+            this.dishPriceTextBox.Size = new System.Drawing.Size(173, 36);
+            this.dishPriceTextBox.TabIndex = 6;
             // 
             // dish_priceLabel1
             // 
@@ -456,7 +456,7 @@ namespace chef
             this.add_rowButton.Size = new System.Drawing.Size(61, 61);
             this.add_rowButton.TabIndex = 10;
             this.add_rowButton.UseVisualStyleBackColor = false;
-            this.add_rowButton.Click += new System.EventHandler(this.add_rowButton_Click);
+            this.add_rowButton.Click += new System.EventHandler(this.AddRowButton_Click);
             // 
             // delete_rowButton
             // 
@@ -472,7 +472,7 @@ namespace chef
             this.delete_rowButton.Size = new System.Drawing.Size(61, 61);
             this.delete_rowButton.TabIndex = 11;
             this.delete_rowButton.UseVisualStyleBackColor = false;
-            this.delete_rowButton.Click += new System.EventHandler(this.delete_rowButton_Click);
+            this.delete_rowButton.Click += new System.EventHandler(this.DeleteRowButton_Click);
             // 
             // errorProvider1
             // 
@@ -504,21 +504,21 @@ namespace chef
             this.Controls.Add(this.cooking_timeLabel1);
             this.Controls.Add(this.dish_priceLabel1);
             this.Controls.Add(this.menu_sectionLabel);
-            this.Controls.Add(this.menu_sectionComboBox);
+            this.Controls.Add(this.menuSectionComboBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.delete_rowButton);
             this.Controls.Add(this.add_rowButton);
             this.Controls.Add(this.saveButon);
-            this.Controls.Add(this.cooking_timeTextBox);
+            this.Controls.Add(this.cookingTimeTextBox);
             this.Controls.Add(this.cooking_timeLabel);
-            this.Controls.Add(this.massTextBox);
+            this.Controls.Add(this.weightTextBox);
             this.Controls.Add(this.recipeLabel);
             this.Controls.Add(this.massLabel);
-            this.Controls.Add(this.dish_portionsTextBox);
+            this.Controls.Add(this.dishPortionsTextBox);
             this.Controls.Add(this.dish_portionsLabel);
-            this.Controls.Add(this.dish_priceTextBox);
+            this.Controls.Add(this.dishPriceTextBox);
             this.Controls.Add(this.dish_priceLabel);
-            this.Controls.Add(this.dish_nameTextBox);
+            this.Controls.Add(this.dishNameTextBox);
             this.Controls.Add(this.ingredientsLabel);
             this.Controls.Add(this.dish_nameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -526,12 +526,12 @@ namespace chef
             this.MaximizeBox = false;
             this.Name = "dishes_AddEdit_Form";
             this.Text = "dishes_AddEdit_Form";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.dishes_AddEdit_Form_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DishesAddEditForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dish_portionsTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cooking_timeTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.massTextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dish_priceTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dishPortionsTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cookingTimeTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weightTextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dishPriceTextBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -541,21 +541,21 @@ namespace chef
         #endregion
 
         private System.Windows.Forms.Label dish_nameLabel;
-        private System.Windows.Forms.TextBox dish_nameTextBox;
+        private System.Windows.Forms.TextBox dishNameTextBox;
         private System.Windows.Forms.Button saveButon;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.ComboBox menu_sectionComboBox;
+        private System.Windows.Forms.ComboBox menuSectionComboBox;
         private System.Windows.Forms.Label menu_sectionLabel;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label dish_portionsLabel;
-        private System.Windows.Forms.NumericUpDown dish_portionsTextBox;
+        private System.Windows.Forms.NumericUpDown dishPortionsTextBox;
         private System.Windows.Forms.Label cooking_timeLabel;
-        private System.Windows.Forms.NumericUpDown cooking_timeTextBox;
+        private System.Windows.Forms.NumericUpDown cookingTimeTextBox;
         private System.Windows.Forms.Label cooking_timeLabel1;
         private System.Windows.Forms.Label massLabel;
-        private System.Windows.Forms.NumericUpDown massTextBox;
+        private System.Windows.Forms.NumericUpDown weightTextBox;
         private System.Windows.Forms.Label dish_priceLabel;
-        private System.Windows.Forms.NumericUpDown dish_priceTextBox;
+        private System.Windows.Forms.NumericUpDown dishPriceTextBox;
         private System.Windows.Forms.Label dish_priceLabel1;
         private System.Windows.Forms.Label massLabel1;
         private System.Windows.Forms.Label recipeLabel;
