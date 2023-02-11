@@ -1,7 +1,7 @@
 ﻿
 namespace chef
 {
-    partial class dishes_Filter_Form
+    partial class DishesFilterForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,13 @@ namespace chef
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dishes_Filter_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DishesFilterForm));
             this.menuSectionCheckBox = new System.Windows.Forms.CheckBox();
             this.energyCategoryCheckBox = new System.Windows.Forms.CheckBox();
             this.portionsCheckBox = new System.Windows.Forms.CheckBox();
             this.cookingTimeCheckBox = new System.Windows.Forms.CheckBox();
             this.weightCheckBox = new System.Windows.Forms.CheckBox();
-            this.menu_sectionComboBox = new System.Windows.Forms.ComboBox();
+            this.menuSectionComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@ namespace chef
             this.portions1TextBox = new System.Windows.Forms.TextBox();
             this.cookingTime1 = new System.Windows.Forms.TextBox();
             this.weight1 = new System.Windows.Forms.TextBox();
-            this.energy_categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.energyCategoryComboBox = new System.Windows.Forms.ComboBox();
             this.portions2TextBox = new System.Windows.Forms.TextBox();
             this.cookingTime2 = new System.Windows.Forms.TextBox();
             this.weight2 = new System.Windows.Forms.TextBox();
@@ -68,7 +68,6 @@ namespace chef
             this.menuSectionCheckBox.TabIndex = 2;
             this.menuSectionCheckBox.Text = "Розділ меню";
             this.menuSectionCheckBox.UseVisualStyleBackColor = true;
-            this.menuSectionCheckBox.CheckedChanged += new System.EventHandler(this.units_of_measurementCheckBox_CheckedChanged);
             // 
             // energy_categoryCheckBox
             // 
@@ -80,7 +79,6 @@ namespace chef
             this.energyCategoryCheckBox.TabIndex = 2;
             this.energyCategoryCheckBox.Text = "Енергетична категорія";
             this.energyCategoryCheckBox.UseVisualStyleBackColor = true;
-            this.energyCategoryCheckBox.CheckedChanged += new System.EventHandler(this.proteinsCheckBox_CheckedChanged);
             // 
             // portionsCheckBox
             // 
@@ -92,7 +90,6 @@ namespace chef
             this.portionsCheckBox.TabIndex = 2;
             this.portionsCheckBox.Text = "Кількість порцій";
             this.portionsCheckBox.UseVisualStyleBackColor = true;
-            this.portionsCheckBox.CheckedChanged += new System.EventHandler(this.fatsCheckBox_CheckedChanged);
             // 
             // cooking_timeCheckBox
             // 
@@ -104,7 +101,6 @@ namespace chef
             this.cookingTimeCheckBox.TabIndex = 2;
             this.cookingTimeCheckBox.Text = "Час приготування";
             this.cookingTimeCheckBox.UseVisualStyleBackColor = true;
-            this.cookingTimeCheckBox.CheckedChanged += new System.EventHandler(this.carbohydratesCheckBox_CheckedChanged);
             // 
             // massCheckBox
             // 
@@ -116,14 +112,13 @@ namespace chef
             this.weightCheckBox.TabIndex = 2;
             this.weightCheckBox.Text = "Маса на виході";
             this.weightCheckBox.UseVisualStyleBackColor = true;
-            this.weightCheckBox.CheckedChanged += new System.EventHandler(this.energy_valueCheckBox_CheckedChanged);
             // 
             // menu_sectionComboBox
             // 
-            this.menu_sectionComboBox.Enabled = false;
-            this.menu_sectionComboBox.Font = new System.Drawing.Font("Calibri", 13.91597F);
-            this.menu_sectionComboBox.FormattingEnabled = true;
-            this.menu_sectionComboBox.Items.AddRange(new object[] {
+            this.menuSectionComboBox.Enabled = false;
+            this.menuSectionComboBox.Font = new System.Drawing.Font("Calibri", 13.91597F);
+            this.menuSectionComboBox.FormattingEnabled = true;
+            this.menuSectionComboBox.Items.AddRange(new object[] {
             "Холодні страви та закуски",
             "Гарячі закуски",
             "Перші страви",
@@ -133,11 +128,11 @@ namespace chef
             "Десерти",
             "Безалкогольні напої",
             "Алкогольні напої"});
-            this.menu_sectionComboBox.Location = new System.Drawing.Point(275, 10);
-            this.menu_sectionComboBox.Name = "menu_sectionComboBox";
-            this.menu_sectionComboBox.Size = new System.Drawing.Size(363, 36);
-            this.menu_sectionComboBox.TabIndex = 3;
-            this.menu_sectionComboBox.SelectedValueChanged += new System.EventHandler(this.filterValue_ValueChanged);
+            this.menuSectionComboBox.Location = new System.Drawing.Point(275, 10);
+            this.menuSectionComboBox.Name = "menu_sectionComboBox";
+            this.menuSectionComboBox.Size = new System.Drawing.Size(363, 36);
+            this.menuSectionComboBox.TabIndex = 3;
+            this.menuSectionComboBox.SelectedValueChanged += new System.EventHandler(this.FilterValue_ValueChanged);
             // 
             // label3
             // 
@@ -211,7 +206,7 @@ namespace chef
             this.okButton.TabIndex = 7;
             this.okButton.Text = "ОК";
             this.okButton.UseVisualStyleBackColor = false;
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
+            this.okButton.Click += new System.EventHandler(this.HideForm);
             // 
             // cancel_filtrationButton
             // 
@@ -225,7 +220,7 @@ namespace chef
             this.cancel_filtrationButton.TabIndex = 7;
             this.cancel_filtrationButton.Text = "Скинути фільтрацію";
             this.cancel_filtrationButton.UseVisualStyleBackColor = false;
-            this.cancel_filtrationButton.Click += new System.EventHandler(this.cancel_filtrationButton_Click);
+            this.cancel_filtrationButton.Click += new System.EventHandler(this.CancelFiltrationButton_Click);
             // 
             // portions1
             // 
@@ -235,7 +230,7 @@ namespace chef
             this.portions1TextBox.Name = "portions1";
             this.portions1TextBox.Size = new System.Drawing.Size(137, 36);
             this.portions1TextBox.TabIndex = 8;
-            this.portions1TextBox.TextChanged += new System.EventHandler(this.filterValue_ValueChanged);
+            this.portions1TextBox.TextChanged += new System.EventHandler(this.FilterValue_ValueChanged);
             // 
             // cooking_time1
             // 
@@ -245,7 +240,7 @@ namespace chef
             this.cookingTime1.Name = "cooking_time1";
             this.cookingTime1.Size = new System.Drawing.Size(137, 36);
             this.cookingTime1.TabIndex = 8;
-            this.cookingTime1.TextChanged += new System.EventHandler(this.filterValue_ValueChanged);
+            this.cookingTime1.TextChanged += new System.EventHandler(this.FilterValue_ValueChanged);
             // 
             // mass1
             // 
@@ -255,22 +250,22 @@ namespace chef
             this.weight1.Name = "mass1";
             this.weight1.Size = new System.Drawing.Size(137, 36);
             this.weight1.TabIndex = 8;
-            this.weight1.TextChanged += new System.EventHandler(this.filterValue_ValueChanged);
+            this.weight1.TextChanged += new System.EventHandler(this.FilterValue_ValueChanged);
             // 
             // energy_categoryComboBox
             // 
-            this.energy_categoryComboBox.Enabled = false;
-            this.energy_categoryComboBox.Font = new System.Drawing.Font("Calibri", 13.91597F);
-            this.energy_categoryComboBox.FormattingEnabled = true;
-            this.energy_categoryComboBox.Items.AddRange(new object[] {
+            this.energyCategoryComboBox.Enabled = false;
+            this.energyCategoryComboBox.Font = new System.Drawing.Font("Calibri", 13.91597F);
+            this.energyCategoryComboBox.FormattingEnabled = true;
+            this.energyCategoryComboBox.Items.AddRange(new object[] {
             "низька",
             "середня",
             "висока"});
-            this.energy_categoryComboBox.Location = new System.Drawing.Point(275, 56);
-            this.energy_categoryComboBox.Name = "energy_categoryComboBox";
-            this.energy_categoryComboBox.Size = new System.Drawing.Size(363, 36);
-            this.energy_categoryComboBox.TabIndex = 3;
-            this.energy_categoryComboBox.SelectedValueChanged += new System.EventHandler(this.filterValue_ValueChanged);
+            this.energyCategoryComboBox.Location = new System.Drawing.Point(275, 56);
+            this.energyCategoryComboBox.Name = "energy_categoryComboBox";
+            this.energyCategoryComboBox.Size = new System.Drawing.Size(363, 36);
+            this.energyCategoryComboBox.TabIndex = 3;
+            this.energyCategoryComboBox.SelectedValueChanged += new System.EventHandler(this.FilterValue_ValueChanged);
             // 
             // portions2
             // 
@@ -280,7 +275,7 @@ namespace chef
             this.portions2TextBox.Name = "portions2";
             this.portions2TextBox.Size = new System.Drawing.Size(137, 36);
             this.portions2TextBox.TabIndex = 8;
-            this.portions2TextBox.TextChanged += new System.EventHandler(this.filterValue_ValueChanged);
+            this.portions2TextBox.TextChanged += new System.EventHandler(this.FilterValue_ValueChanged);
             // 
             // cooking_time2
             // 
@@ -290,7 +285,7 @@ namespace chef
             this.cookingTime2.Name = "cooking_time2";
             this.cookingTime2.Size = new System.Drawing.Size(137, 36);
             this.cookingTime2.TabIndex = 8;
-            this.cookingTime2.TextChanged += new System.EventHandler(this.filterValue_ValueChanged);
+            this.cookingTime2.TextChanged += new System.EventHandler(this.FilterValue_ValueChanged);
             // 
             // mass2
             // 
@@ -300,7 +295,7 @@ namespace chef
             this.weight2.Name = "mass2";
             this.weight2.Size = new System.Drawing.Size(137, 36);
             this.weight2.TabIndex = 8;
-            this.weight2.TextChanged += new System.EventHandler(this.filterValue_ValueChanged);
+            this.weight2.TextChanged += new System.EventHandler(this.FilterValue_ValueChanged);
             // 
             // priceCheckBox
             // 
@@ -312,7 +307,6 @@ namespace chef
             this.priceCheckBox.TabIndex = 2;
             this.priceCheckBox.Text = "Ціна";
             this.priceCheckBox.UseVisualStyleBackColor = true;
-            this.priceCheckBox.CheckedChanged += new System.EventHandler(this.priceCheckBox_CheckedChanged);
             // 
             // label1
             // 
@@ -342,7 +336,7 @@ namespace chef
             this.price1.Name = "price1";
             this.price1.Size = new System.Drawing.Size(137, 36);
             this.price1.TabIndex = 8;
-            this.price1.TextChanged += new System.EventHandler(this.filterValue_ValueChanged);
+            this.price1.TextChanged += new System.EventHandler(this.FilterValue_ValueChanged);
             // 
             // price2
             // 
@@ -352,7 +346,7 @@ namespace chef
             this.price2.Name = "price2";
             this.price2.Size = new System.Drawing.Size(137, 36);
             this.price2.TabIndex = 8;
-            this.price2.TextChanged += new System.EventHandler(this.filterValue_ValueChanged);
+            this.price2.TextChanged += new System.EventHandler(this.FilterValue_ValueChanged);
             // 
             // dishes_Filter_Form
             // 
@@ -378,9 +372,9 @@ namespace chef
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.energy_categoryComboBox);
+            this.Controls.Add(this.energyCategoryComboBox);
             this.Controls.Add(this.priceCheckBox);
-            this.Controls.Add(this.menu_sectionComboBox);
+            this.Controls.Add(this.menuSectionComboBox);
             this.Controls.Add(this.weightCheckBox);
             this.Controls.Add(this.cookingTimeCheckBox);
             this.Controls.Add(this.portionsCheckBox);
@@ -389,8 +383,8 @@ namespace chef
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "dishes_Filter_Form";
             this.Text = "Фільтрування";
-            this.Deactivate += new System.EventHandler(this.types_of_products_Filter_Form_Leave);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.types_of_products_Filter_Form_FormClosing);
+            this.Deactivate += new System.EventHandler(this.HideForm);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CloseForm);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,7 +397,7 @@ namespace chef
         private System.Windows.Forms.CheckBox portionsCheckBox;
         private System.Windows.Forms.CheckBox cookingTimeCheckBox;
         private System.Windows.Forms.CheckBox weightCheckBox;
-        private System.Windows.Forms.ComboBox menu_sectionComboBox;
+        private System.Windows.Forms.ComboBox menuSectionComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -415,7 +409,7 @@ namespace chef
         private System.Windows.Forms.TextBox portions1TextBox;
         private System.Windows.Forms.TextBox cookingTime1;
         private System.Windows.Forms.TextBox weight1;
-        private System.Windows.Forms.ComboBox energy_categoryComboBox;
+        private System.Windows.Forms.ComboBox energyCategoryComboBox;
         private System.Windows.Forms.TextBox portions2TextBox;
         private System.Windows.Forms.TextBox cookingTime2;
         private System.Windows.Forms.TextBox weight2;
